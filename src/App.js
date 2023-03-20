@@ -58,16 +58,16 @@ class App extends Component {
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
         />
         <main className="container">
+          <Counters
+            counters={this.state.counters}
+            onReset={this.handleReset}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            onDelete={this.handleDelete}
+          />
+
           <Movies />
         </main>
-
-        <Counters
-          counters={this.state.counters}
-          onReset={this.handleReset}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          onDelete={this.handleDelete}
-        />
       </React.Fragment>
     );
   }
